@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizza Delivery Form</title>
+  <style>
+    div{
+        text-align: center;
+        color: rgb(254, 253, 253);
+        background: #f50606fe; 
+    }
+  #phone{
+     width: 50px;
+     
+  }
+  fieldset{
+    margin: 450px;
+    margin-top: 50px;
+  }
+
+   form header{
+     color: rgb(248, 246, 246);
+     border: 2px solid black;
+     background: #ec0404;
+     
+     
+     
+   }
+  </style>
+</head>
+<body align="center">
+    <div>
+        <h1>WELCOME TO ITALIAN PIZZA</h1> 
+    </div>
+    <form>
+        <fieldset >
+            <legend style="text-align: center;font-size: xx-large;">ORDER PIZZA</legend>
+
+             <header>
+               <h3> WE DELIVER PIZZA IN 40 MINUTES MAX.<br> IF NOT- PIZZA'S ON US!</h3>
+             </header><br><br>
+
+            <label for="ename">ENTER YOUR EMAIL:</label><br>
+            <input type="email" id="ename" name="ename" required></label><br><br>
+
+            <label for="phone">PHONE:</label><br>
+            <input type="text" id="phone" name="phone" placeholder="Area" required >
+            <input type="text" id="phone" name="phone" placeholder="local"required>
+            <input type="text" id="phone" name="phone" placeholder="local"required><br><br>
+
+            <label for="slice">NUMBER OF SLICES:</label><br>
+            <input type="slice" id="slice" name="slice" required></label><br><br>
+
+
+            <label for="size">PIZZA SIZE:</label><br>
+            <input type="radio" id="size" name="size"  value="size" required /> 8-ich
+            <input type="radio" id="size" name="size"  value="size" required /> 10-ich
+            <input type="radio" id="size" name="size"  value="size" required /> 12-ich
+            <input type="radio" id="size" name="size"  value="size" required /> 14-ich
+            <BR><br>
+
+            TOPPINGS  :  <br>
+                <input type="checkbox" id="chk1" name="chk1" value="PEPPERONI" /> PEPPERONI
+                <input type="checkbox" id="chk2" name="chk2" value="ONIONS"/> ONIONS
+                <input type="checkbox" id="chk3" name="chk3" value="MUSHROOM"/> MUSHROOM
+                <input type="checkbox" id="chk3" name="chk3" value="SAUSAGE"/> SAUSAGE
+                <br/><br/>
+           
+
+            *<input type="checkbox" id="chk4" name="chk4" value="conditions"/> I AGREE TO THE TERMS AND CONDTIONS.
+
+
+            <br><br>
+            <input type="submit" value="ORDER NOW" style="color: rgb(241, 239, 238); background: #f80a0a;" />
+
+
+
+
+
+        </fieldset>
+    </form>
+  
+
+</body>
