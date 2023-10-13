@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Total Amount</title>
+    <style>
+        
+        
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            border: 5px solid black;
+            background-image: url(wall.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 450px;
+            margin-top: 50px;
+            
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Calculate Total Amount</h1>
+
+
+    <label for="Productname">Product Name:</label>
+    <input type="text" id="name" placeholder="Product name"><br><br>
+     
+    <label for="unitPrice">Unit Price:</label>
+    <input type="number" id="unitPrice" placeholder="Enter unit price"><br><br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" placeholder="Enter quantity"><br><br>
+
+    <button onclick="calculateTotal()">Calculate Total</button><BR><br>
+
+    
+      <p>Total Amount:&#8377</div> <span id="totalAmount"></span></p>
+
+        
+
+    <script>
+        function calculateTotal() {
+            // Get unit price and quantity from input fields
+            var unitPrice = parseFloat(document.getElementById("unitPrice").value);
+            var quantity = parseFloat(document.getElementById("quantity").value);
+
+            // Check if input values are valid numbers
+            if (isNaN(unitPrice) || isNaN(quantity)) {
+                alert("Please enter valid numbers for unit price and quantity.");
+                return;
+            }
+
+            // Calculate the total amount
+            var total = unitPrice * quantity;
+
+            // Display the total amount on the webpage
+            document.getElementById("totalAmount").textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
