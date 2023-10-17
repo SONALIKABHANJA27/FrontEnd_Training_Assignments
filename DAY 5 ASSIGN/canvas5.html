@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  >
+	<head> 
+        <title>
+            CANVAS
+        </title>
+    </head>
+	<body>
+	<h1>CANVAS ASSIGN </h1>
+	 
+		
+		<input type="button"  onclick="fn_drawGraphics()"  value="Draw Graphics" />
+		<br/> <br/>
+		
+ 
+		
+		<canvas  id="canvas1"  style="border: 3px solid  rgb(10, 9, 10)"  height="300"  width="300"> 
+		</canvas>
+		
+		<script>
+			function fn_drawGraphics()
+			{
+				var canvasObj =  document.getElementById("canvas1");
+				var  ctx  =  canvasObj.getContext("2d");
+				
+			  ctx.fillStyle = "orange";
+              let  x = 10 , y = 290,  h = 250, w=20;
+			  var ar = [-250, -50, -150, -90, -200,- 70, -100];
+			   
+			   for(var i = 0;  i <= 6;  i++)
+			   {
+					 ctx.fillRect(x,y,w,ar[i]);
+					 x= x +  40;
+			   }
+
+            }
+        </script>
+	
+</body>	
+</html>
+
+
+			   
+        
