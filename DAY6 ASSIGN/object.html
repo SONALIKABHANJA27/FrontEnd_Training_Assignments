@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    
+    .moving-object {
+      position: relative;
+      animation: moveLeftToRight 3s linear infinite;
+      animation-direction: alternate;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    
+    @keyframes moveLeftToRight {
+      from{
+        left: 0%;
+      }
+      to{
+        left: 85%;
+      }
+    }
+  </style>
+</head>
+<body style="background-color: black;background-image: url(background.jpg);background-repeat: no-repeat; background-size: cover;">
+    <h1 style="color: rgb(249, 243, 243); text-align: center;font-size: 50px;font-family: Georgia, 'Times New Roman', Times, serif;">TIME TO DREAM</h1>
+   
+ 
+    <div class="moving-object">
+    <img src="moom.png" height="250px" width="200px">
+    </div>
+
+    <br><br>
+
+    <audio id="audioPlayer" controls>
+        <source src="Chand Sifarish.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
