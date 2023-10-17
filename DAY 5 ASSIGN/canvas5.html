@@ -25,12 +25,13 @@
 				
 			  ctx.fillStyle = "orange";
               let  x = 10 , y = 290,  h = 250, w=20;
-			  var ar = [-250, -50, -150, -90, -200,- 70, -100];
+			  var ar = [250, 50, 150, 90, 200,70, 100];
 			   
 			   for(var i = 0;  i <= 6;  i++)
 			   {
-					 ctx.fillRect(x,y,w,ar[i]);
+					 ctx.fillRect(x,ar[i],w,h);
 					 x= x +  40;
+				         y=300-h;
 			   }
 
             }
