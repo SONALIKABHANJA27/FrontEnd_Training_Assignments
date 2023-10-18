@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+    <title>
+
+    </title>
+    <style>
+      
+      body{
+        text-align: center;
+        
+        background-image: url(bodyaxis.webp);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        
+      }
+
+
+        fieldset{
+        margin: 450px;
+        margin-top: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        border: 3px solid black;
+       }
+
+       #name{
+        width: 95%;
+        border: 2px solid black;
+       }
+
+       #number{
+        width: 95%;
+        border: 2px solid black;
+       }
+
+      
+       #address{
+        width: 95%;
+        border: 2px solid black;
+       }
+
+       #browser{
+        width: 95%;
+        border: 2px solid black;
+       }
+
+       #phone{
+        width: 95%;
+        border: 2px solid black;
+       }
+     </style>
+</head>
+ 
+<body>
+
+
+    <h1>WELCOME TO AXIS BANK</h1>
+
+        <fieldset style="background-color: #e9e8e889;">
+          <h3>BANK ACCOUNT OPENING FORM</h3>
+        
+         <label for="account">NAME ON ACCOUNT*</label><br>
+          <input type="text" id="name"  placeholder="ENTER FIRST NAME" required ><br><br>
+          <input type="text" id="name"  placeholder="ENTER MIDDLIE NAME"required><br><br>
+         <input type="text" id="name"  placeholder="ENTER LAST NAME"required><br><br>
+
+
+         <label for="accountno" >ACCOUNT NUMBER*</label><br>
+         <input type="text" id="number"   autofocus><br><br>
+         
+         <label >AADHAR NUMBER*</label><br>
+         <input type="text" id="number" placeholder="ENTER AADHAR NUMBER"   max="12" required pattern="\d[0-9]"><br><br>
+         
+         
+
+
+         <label >ACCOUNT TYPE:</label><br>
+         <input type="radio" id="type"  value="size" required /> Current Account 
+         <input type="radio" id="type"  value="size" required /> Saving Account 
+
+         <br><br> <label for="address">ADDRESS:</label><br>
+         <input type="text" id="address"  placeholder="ENTER FULL ADDRESS" required ><br><br>
+         <input type="text" id="address" placeholder="ENTER CITY"required><br><br>
+         <input type="text" id="address"  placeholder="ENTER STATE"required><br><br>
+         <input type="text" id="address"  placeholder="ENTER PINCODE"  min="6" max="7" required pattern="\d[0-9]"><br><br>
+
+         <label >OCCUPATION:</label><BR>
+         <input list="browsers" name="browser" id="browser">
+
+           <datalist id="browsers">
+            <option value="DOCTOR">
+            <option value="BUSINESSMAN">
+            <option value="SCIENTIST">
+            <option value="POLICE OFFICE">
+            <option value="PROFESSOR">
+           </datalist><br><br>
+
+
+           <label for="phone">PHONE *</label><br>
+           <input type="text" id="phone" name="phone" placeholder="ENTER PHONE NUMBER" required > 
+        
+
+
+
+
+
+           <br><br>
+           <input type="submit" value="SUBMIT" style="width: 97%;" /><br><br>
+
+           *<input type="checkbox" id="chk1" name="chk1" value="conditions"/> I AGREE TO THE TERMS AND CONDTIONS.
+
+
+
+
+
+
+
+
+
+        </fieldset>
+
+
+</body>
