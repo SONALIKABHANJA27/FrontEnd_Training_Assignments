@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+
+
+    <script  src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"> </script>
+</head>
+<body>
+    <h1>LOGIN FORM</h1>
+    <button type="button" class="btn btn-danger" 
+           data-bs-toggle="modal" 
+		   data-bs-target="#login">
+		SHOW LOGIN
+	</button>
+
+    <!-- Modal -->
+  <div class="modal" id="login">
+    <div class="modal-dialog">
+  
+    <div class="modal-content">
+    
+      
+      <div class="modal-header">
+          <h5 class="modal-title">STUDENTS LOGIN INFO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+   
+      <div class="modal-body  text-primary">
+        <label for="Userid">User name:</label>
+        <input type="text" id="uname" placeholder="User name"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="pwd" placeholder="password"><br><br>
+      </div>
+      
+      
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        <button type="button"  onclick="fn_save()" class="btn btn-info">submit</button>
+      </div>
+    
+    </div>
+  
+  </div>
+  </div>
+
+
+     <script>
+
+     function fn_save(){
+
+     var txt1 = document.getElementById("uname");
+
+     var txt2 = document.getElementById("pwd");
+
+
+
+     if(txt1.value != "sona" || txt2.value != 'sona123')
+
+     {
+
+        alert("Invalid Credentials");
+
+     }
+
+     else{
+
+        alert("You are logged in")
+
+     }
+
+
+
+     var modalDomObj = document.getElementById('login');
+
+        var modalBSObj = bootstrap.Modal.getInstance(modalDomObj);
+
+        modalBSObj.hide();
+
+    }
+
+</script>
+</body>
+</html>
