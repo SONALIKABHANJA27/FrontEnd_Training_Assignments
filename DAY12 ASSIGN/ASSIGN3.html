@@ -1,0 +1,43 @@
+
+<html>
+<head>
+    <title>discount</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <label for="productname">Product Name:</label>
+    <input type="text" id="productname"><br><br>
+ 
+    <label for="productprice">Price per Item:</label>
+    <input type="number" id="productprice"><br><br>
+ 
+    <label for="productquantity">Quantity:</label>
+    <input type="number" id="productquantity"><br><br>
+ 
+    <button onclick="calculateTotal()">Get Total</button>
+ 
+    <p>Total Amount:&#x20B9<span id="totalamount">0.00</span></p>
+ 
+    <script>
+        function calculateTotal() {
+        var productName = document.getElementById("productname").value;
+            var pricePerItem = parseFloat(document.getElementById("productprice").value);
+            var quantity = parseInt(document.getElementById("productquantity").value);
+ 
+            let totalAmount = pricePerItem * quantity;
+ 
+            if (quantity > 10) {
+                totalAmount *= 0.9;
+            }
+            if (quantity > 20) {
+                totalAmount *= 0.85;
+            }
+            if (quantity > 30) {
+                totalAmount *= 0.8;
+            }
+ 
+            document.getElementById("totalamount").innerHTML=totalAmount.toFixed(2);
+        }
+    </script>
+</body>
+</html>

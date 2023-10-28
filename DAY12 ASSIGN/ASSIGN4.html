@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Arthmitic Operations</h4>
+    <form>
+        <fliedset>
+            <legend></legend>
+                First Number:<input type="number" id="n1"><br>
+                <br>
+                Second Number:<input type="number" id="n2"><br>
+                <br>
+                <button type="button" onclick="fn_add()">SUM</button>
+                <button type="button" onclick="fn_sub()">SUB</button>
+                <button type="button" onclick="fn_mul()">MUL</button>
+                <button type="button" onclick="fn_div()">DIV</button>
+                <p id="result"></p>
+ 
+           
+        </fliedset>
+    </form>
+ 
+    <script>
+        var f_num=document.getElementById("n1");
+         var s_num=document.getElementById("n2");
+         var res = document.getElementById("result");
+         function fn_add(){
+            var sum = parseInt(f_num.value) +  parseInt(s_num.value);
+            res.innerHTML= "sum =" +sum;
+         }
+         function fn_sub(){
+            var sub = parseInt(f_num.value) -  parseInt(s_num.value);
+            res.innerHTML= "sub =" + sub;
+         }
+         function fn_mul(){
+            var mul = parseInt(f_num.value) *  parseInt(s_num.value);
+            res.innerHTML= "mul =" + mul;
+         }
+         function fn_div(){
+            var div= parseInt(f_num.value) /  parseInt(s_num.value);
+            res.innerHTML= "div =" + div;
+         }
+ 
+    </script>
+</body>
+</html>

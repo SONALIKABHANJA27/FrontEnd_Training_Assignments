@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        #message {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset>
+      
+      <h1>Login Page</h1>
+      <form id="loginForm">
+        <label>Username:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label>Password:</label>
+        <input type="password" id="password" required>
+        <br>
+        <button type="button" id="loginButton" onclick="fn_sava()">Login</button>
+      </form>
+      <p id="message"></p>
+
+
+    </fieldset>
+    <script>
+        
+        
+
+        function fn_sava () {
+
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var message = document.getElementById("message");
+
+
+            if (username.value == "sona" && password.value == "sona123") {
+                message.innerText = "Welcome! Logged in successfully.";
+                message.style.color = "green";
+            } else {
+                message.innerText = "Invalid credentials. Please try again.";
+                message.style.color = "red";
+            }
+        };
+    </script>
+</body>
+</html>
