@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            td,tr{
+                border: 2px solid ;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>JavaScript Programming -- Arrays </h3>
+        <hr/>
+       
+        <input type="button"  value="Get Data"  onclick="fn_getData()"  />
+        <br><br><br>
+       
+         
+   
+        <table id="list1" style="border: 2px solid black;margin: 3px; padding: 2px;">
+        <script>    
+            function    fn_getData()
+           {
+                var  strArray = ['HTML','CSS','Jquery','Angular','Bootstrap'];  
+                var  lstObj = document.getElementById("list1");
+                var  str  = "";
+                 
+                for(let i in strArray)
+                {
+                    let n = parseInt(i) + 1;
+                    str =  str +"<tr><td>" +  n + "</td>"+"<td>" + strArray[i] + "</td></tr>";
+                }  
+               
+                lstObj.innerHTML =  str;
+            }
+        </script>
+        </table>
+       
+     
+       
+    </body>
+</html>

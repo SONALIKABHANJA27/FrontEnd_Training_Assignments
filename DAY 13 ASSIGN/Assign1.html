@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <body>
+        <h2>FUNCTION</h2>
+      
+        <hr>
+        <br>
+ 
+        <div id="d1">
+        <p id="p1">Array:[41,55,22,65,98,100,24]</p>
+        <input type="button" id="b1" value="Even no." onclick="f1()">
+        <br>
+        <p id="p2"></p>
+        </div>
+        <br><br>
+ 
+        <div id="d2">
+        <input type="text" id="t1" placeholder="Enter first number" >
+        <br><br>
+        <input type="text" id="t2" placeholder="Enter second number">
+        
+        <br><br>
+        <input type="button" id="b2"  value="Power" onclick="f2()">
+        <br>
+        <p id="p3"></p>
+        </div>
+        <br><br>
+ 
+        <div id="d3">
+        <input type="text" id="t3" placeholder="Enter String">
+        <br><br>
+        <input type="button" id="b3" value="Even no." onclick="f3()">
+        <br>
+        <p id="p4"></p>
+        </div>
+ 
+ 
+ 
+ 
+        <script>
+            function f1(){
+                var ar1=[1,2,3,4,5,6,7,8,9];
+                var paraObj1 = document.getElementById("p2");
+                var str="";
+                for(let i in ar1){
+                    if(ar1[i]%2==0){
+                        str =  str + ar1[i] +" ";
+                    }
+                }
+                paraObj1.innerText= "Even numbers: " +str;
+            }
+ 
+ 
+            function f2(){
+                var txtObj1 = document.getElementById("t1");
+                var txtObj2= document.getElementById("t2");
+                var paraObj2=document.getElementById("p3");
+ 
+                var num1= parseInt(txtObj1.value);
+                var num2= parseInt(txtObj2.value);
+ 
+                var pow=1;
+ 
+                while(num2!=0){
+                    pow*=num1;
+                    --num2;
+                }
+                paraObj2.innerText="Power:"+pow;
+            }
+ 
+ 
+ 
+            function f3(){
+                var txtObj3 = document.getElementById("t3");
+                var paraObj3 = document.getElementById("p4");
+ 
+                var str = txtObj3.value;
+                var c= str.split(' ').length;
+ 
+                paraObj3.innerHTML="No. of words: "+ c;
+ 
+            }
+ 
+ 
+        </script>
+    </body>
+
+</body>
+</html>

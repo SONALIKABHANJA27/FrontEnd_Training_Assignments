@@ -1,0 +1,71 @@
+<html>
+	<head>
+     <style>
+         table{
+            color: aliceblue;
+            background-color: rgb(169, 76, 127);
+            border: 4px solid rgb(7, 7, 7);
+        }
+     </style>
+
+
+    </head>
+	<body>
+		<h3>JavaScript Programming -- Array Of Objects  </h3>
+		<hr/>
+		
+		
+		<input type="button"   value="show Data"   onclick="fn_getData()"  />
+	 
+		<br/><br/>
+		<table  id="table1"  border="4"  width="700"  cellpadding="20" cellspacing="4" style="margin-left: 280px;">
+			<tr>
+					<th>Name</th>
+					<th>City</th>
+					<th>Country</th>
+			</tr>
+		</table>
+	 
+		
+		<script>	
+		
+			
+			var empArray =   [
+            {Name:"Alfreds Futterkiste",City:"Berlin",Country:"Germany"}, 
+            {Name:"Ana Trujillo Emparedados y helados",City:"México D.F.",Country:"Mexico"}, 
+            {Name:"Antonio Moreno Taquería",City:"México D.F.",Country:"Mexico"}, 
+            {Name:"Around the Horn",City:"London",Country:"UK"}, 
+            {Name:"B's Beverages",City:"London",Country:"UK"},
+            {Name:"Berglunds snabbköp",City:"Luleå",Country:"Sweden"}, 
+            {Name:"Blauer See Delikatessen",City:"Mannheim",Country:"Germany"}, 
+            {Name:"Blondel père et fils",City:"Strasbourg",Country:"France"},
+            {Name:"Bólido Comidas preparadas",City:"Madrid",Country:"Spain"},
+            {Name:"Bon app",City:"Marseille",Country:"France"},
+            {Name:"Bottom-Dollar Marketse",City:"Tsawassen",Country:"Canada"}, 
+            {Name:"Cactus Comidas para llevar",City:"Buenos Aires",Country:"Argentina"}, 
+            {Name:"Centro comercial Moctezuma",City:"México D.F.",Country:"Mexico"},
+            {Name:"Chop-suey Chinese",City:"Bern",Country:"Switzerland"},
+            {Name:"Comércio Mineiro",City:"São Paulo",Country:"Brazil"}
+
+			];
+		
+		
+		 
+			  function fn_getData()
+			  {	 					
+				var str  = "";
+
+				for(let item of empArray)
+				{
+					str +=  `<tr> <td> ${item.Name} </td> <td>${item.City}</td> <td> ${item.Country}</td> </tr>`;
+				}
+						 
+				var  tableObj =  document.getElementById("table1");	 	
+				tableObj.innerHTML += str;
+			  }		  
+		</script>
+		
+	 
+		
+	</body>
+</html>
