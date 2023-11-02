@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         button{
+            height: 40px;
+            width: 50%;
+            background-color: rgb(13, 13, 13);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            border-radius: 10px;
+            border: none;
+        }
+        #master{
+            float:left;
+            border: 2px solid black;
+            width: 90%;
+           
+        }
+        #master div{
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid rgb(142, 83, 119);
+            border-radius: 10px;
+            color:white;
+            background-color: rgb(142, 64, 111);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <h2>JS Programming---Array Of Objects</h2>
+    <select name="s1" id="s1">
+        <option value="All-Countries">All Countries</option>
+        <option value="Germany">Germany</option>
+        <option value="Mexico">Mexico</option>
+        <option value="UK">UK</option>
+        <option value="Sweden">Sweden</option>
+        <option value="France">France</option>
+        <option value="Spain">Spain</option>
+    </select>
+    <button onclick="fun1()">Show Data</button>
+    <br><br>
+    <div id="master">
+    </div>
+   </body>
+ 
+    <script>
+        var parentDivObj = document.getElementById("master");
+       
+         function fun1(){
+           
+                var arr = [ {"Name":"Alfreds    Futterkiste","City":"Berlin","Country":"Germany"},
+                            {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"},
+                            {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"},
+                            {"Name":"Around the Horn","City":"London","Country":"UK"},
+                            {"Name":"B's Beverages","City":"London","Country":"UK"},
+                            {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"},
+                            {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"},
+                            {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"},
+                            {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"},
+                            {"Name":"Bon app'","City":"Marseille","Country":"France"},
+                            {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"},
+                            {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"},
+                            {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"},
+                            {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"},
+                            {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"} ];
+                            parentDivObj.innerHTML = "";
+                    var selObj = document.getElementById('s1');
+                    var selectedCountry = selObj.value;
+                   
+                    var arr1 = arr;
+                 
+                    if(selectedCountry != "All-Countries")
+                    {
+                         arr1 = arr.filter((item) => item.Country == selectedCountry);
+                    }
+                   
+                   
+                    for(let item of arr1){
+                        var div1 = document.createElement("div");
+                        div1.innerHTML = "Name : " + item.Name + ",  City : " + item.City + ", Country : " + item.Country;
+                        parentDivObj.appendChild(div1);
+                       
+                    }
+                   
+                   
+                   
+                }
+               
+    </script>
+ 
+</html>
