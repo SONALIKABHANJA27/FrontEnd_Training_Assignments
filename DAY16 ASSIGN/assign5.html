@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="timer">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+
+    <script src="timer.js"></script>
+    <script>
+    $(document).ready(function () {
+        var timer;
+        var hours = 0;
+        var minutes = 0;
+        var seconds = 0;
+    
+        function updateTimer() {
+            seconds++;
+            if (seconds >= 5) {
+                seconds = 0;
+                minutes++;
+                if (minutes >= 5) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+    
+            $("#hours").text(hours < 10 ? "0" + hours : hours);
+            $("#minutes").text(minutes < 10 ? "0" + minutes : minutes);
+            $("#seconds").text(seconds < 10 ? "0" + seconds : seconds);
+        }
+    
+        $("#start").click(function () {
+            if (!timer) {
+                timer = setInterval(updateTimer, 50);
+            }
+        });
+    
+        $("#stop").click(function () {
+            clearInterval(timer);
+            timer = null;
+        });
+    
+        $("#reset").click(function () {
+            clearInterval(timer);
+            timer = null;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+            $("#hours").text("00");
+            $("#minutes").text("00");
+            $("#seconds").text("00");
+        });
+    });
+</script>
+</body>
+</html>

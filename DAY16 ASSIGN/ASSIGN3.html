@@ -1,0 +1,41 @@
+
+<html>
+<head>
+    <title>discount</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <label for="productname">Product Name:</label>
+    <input type="text" id="productname"><br><br>
+ 
+    <label for="productprice">Price per Item:</label>
+    <input type="number" id="productprice"><br><br>
+ 
+    <label for="productquantity">Quantity:</label>
+    <input type="number" id="productquantity"><br><br>
+ 
+    <button onclick="calculateTotal()">Get Total</button>
+ 
+    <p>Total Amount:&#x20B9<span id="totalamount">0.00</span></p>
+  
+
+
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"> </script>
+        
+    <script>
+        function calculateTotal() {
+        var productName = $("#productname").val()
+            var pricePerItem = parseFloat($("#productprice").val())
+            var quantity = parseInt($("#productquantity").val())
+ 
+            let totalAmount = pricePerItem * quantity;
+            $("#totalamount").html(totalAmount.toFixed(2));
+        }
+    </script>
+
+</body>
+</html>

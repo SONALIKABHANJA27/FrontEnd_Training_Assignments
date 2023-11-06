@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Ads Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="ad-container">
+        <img id="ad-image" src="" alt="Ad">
+    </div>
+
+    <script src="ads.js"></script>
+    <script>$(document).ready(function () {
+        // Array of ad image URLs
+        var adImages = [
+            'ad1.jpg',
+            'ad2.jpg',
+            'ad3.jpg',
+            // Add more image URLs here
+        ];
+    
+        // Function to generate a random index within the range of adImages
+        function getRandomAdIndex() {
+            return Math.floor(Math.random() * adImages.length);
+        }
+    
+        // Function to update the ad image with a random one
+        function updateAd() {
+            var randomIndex = getRandomAdIndex();
+            var randomAdImage = adImages[randomIndex];
+            $('#ad-image').attr('src', randomAdImage);
+        }
+    
+        // Set an initial random ad
+        updateAd();
+    
+        // Update the ad image every 10 seconds (adjust the interval as needed)
+        var adInterval = setInterval(updateAd, 10000);
+    
+        // To stop generating ads after a specific duration (e.g., 1 minute), you can use the following code:
+        // setTimeout(function() {
+        //     clearInterval(adInterval);
+        // }, 60000); // 60000 milliseconds = 1 minute
+    });
+    </script>
+</body>
+</html>
