@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV String to Uppercase List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="background-color: lightgoldenrodyellow;">
+    <div>
+        <br>
+        <h1>DISPLAY CSV VALUE IN LIST FORMAT USING JQUERY</h1>
+        <br><hr>
+        <label for="csv-input">Input String:</label>
+        <input type="text" id="input">
+        <button id="b1">Get data</button>
+    </div>
+    <ul id="result"></ul>
+
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                var String = $("#input").val();
+                var Array = String.split(',');
+
+                // Clear the previous results
+                $("#result").empty();
+
+                // Process each value and display in uppercase
+                Array.forEach(function (value) {
+                    var listItem = $("<li>").text(value.toUpperCase());
+                    $("#result").append(listItem);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

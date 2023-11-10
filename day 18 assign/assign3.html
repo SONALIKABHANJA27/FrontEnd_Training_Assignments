@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form>
+        <div>
+            <label for="person-name">Person Name (10 characters, only alphabets):</label>
+            <input type="text" id="person-name" name="person-name">
+            <span class="error-message" id="person-name-error"></span>
+        </div>
+
+        <div>
+            <label for="person-contact">Person Contact Number (exact 10 numbers):</label>
+            <input type="text" id="person-contact" name="person-contact">
+            <span class="error-message" id="person-contact-error"></span>
+        </div>
+
+        <div>
+            <label for="vehicle-number">Vehicle Number (AA11AA1111 format):</label>
+            <input type="text" id="vehicle-number" name="vehicle-number">
+            <span class="error-message" id="vehicle-number-error"></span>
+        </div>
+
+        <div>
+            <label for="city-name">City Name (capital letters only):</label>
+            <input type="text" id="city-name" name="city-name">
+            <span class="error-message" id="city-name-error"></span>
+        </div>
+    </form>
+
+    <script>
+        function validatePersonName(personName) {
+            return /^[A-Za-z]{9}$/.test(personName);
+        }
+
+        function validatePersonContact(personContact) {
+            return /^\d{9}$/.test(personContact);
+        }
+
+        function validateVehicleNumber(vehicleNumber) {
+            return /^[A-Z]{2}\d{2}[A-Z]{2}\d{4}$/.test(vehicleNumber);
+        }
+
+        function validateCityName(cityName) {
+            return /^[A-Z]+$/.test(cityName);
+        }
+
+        $(document).ready(function () {
+            $('#person-name').on('keypress', function () {
+                const personName = $(this).val();
+                const isValid = validatePersonName(personName);
+                $('#person-name-error').text(isValid ? '' : 'Invalid Name');
+            });
+
+            $('#person-contact').on('keypress', function () {
+                const personContact = $(this).val();
+                const isValid = validatePersonContact(personContact);
+                $('#person-contact-error').text(isValid ? '' : 'Invalid Contact Number');
+            });
+
+            $('#vehicle-number').on('keypress', function () {
+                const vehicleNumber = $(this).val();
+                const isValid = validateVehicleNumber(vehicleNumber);
+                $('#vehicle-number-error').text(isValid ? '' : 'Invalid Vehicle Number');
+            });
+
+            $('#city-name').on('keypress', function () {
+                const cityName = $(this).val();
+                const isValid = validateCityName(cityName);
+                $('#city-name-error').text(isValid ? '' : 'Invalid City Name');
+            });
+        });
+    </script>
+</body>
+</html>
