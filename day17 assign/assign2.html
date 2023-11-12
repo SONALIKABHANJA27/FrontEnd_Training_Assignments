@@ -1,0 +1,62 @@
+<html>
+
+<head> </head>
+
+<body>
+    <h2> jQuery DOM Manipulations </h2>
+    <hr>
+    Product Name : <input id="t1" /> <br /> <br />
+    Unit Price : <input id="t2" /> <br /><br />
+    Quantity in Stock : <input id="t3" />
+
+    <button id="b1">Add Product</button>
+    <br></br>
+
+    <table id="table1" border="2" width="400px">
+
+        <tr class="header">
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+
+    </table>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    </script>
+
+
+    <script>
+
+        $(document).ready(function ()
+        {
+            $("#b1").click(function()
+            {
+            var name1 = $("#t1").val();
+            var name2 = $("#t2").val();
+            var name3 = $("#t3").val();
+
+            let str = `<tr  style='background-color:pink;'>  <td>${name1} </td>  <td>${name2}</td>  <td>${name3}</td>  </tr>`
+
+            $("#table1").append(str);
+
+             } )
+
+            
+          
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .user-container {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .active {
+            background-color: lightgreen;
+        }
+
+        .inactive {
+            background-color: lightpink;
+        }
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="user-details-container"></div>
+
+    <script>
+        $(document).ready(function () {
+            const apiUrl = ' https://gorest.co.in/public/v2/users';
+
+            $.ajax({
+                url: apiUrl,
+                method: 'GET',
+                success: function (data) {
+                    displayUserDetails(data);
+                },
+                error: function (error) {
+                    console.error('Error fetching user details:', error);
+                }
+            });
+
+            function displayUserDetails(users) {
+                const container = $('#user-details-container');
+
+                users.forEach(function (user) {
+                    const userDiv = $('<div>').addClass('user-container');
+                    const userStatusClass = user.status === 'active' ? 'active' : 'inactive';
+                    userDiv.addClass(userStatusClass);
+
+                    const imageSrc = user.gender === 'male' ? 'https://n4.sdlcdn.com/imgs/b/f/l/Welcome-Restroom-Male-Sign-Large-SDL018146500-1-287dc.jpg' : 'https://tse3.mm.bing.net/th/id/OIP.h1-rVGii0ye8rEWu4RF9ZQHaHa?pid=ImgDet&rs=1';
+                    const genderImage = $('<img>').attr('src', imageSrc).attr('alt', user.gender);
+
+                    const userDetails = $('<p>').text(`Name: ${user.name}, Email: ${user.email}`);
+                    const userStatus = $('<p>').text(`Status: ${user.status}`);
+
+                    userDiv.append(genderImage, userDetails, userStatus);
+                    container.append(userDiv);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
